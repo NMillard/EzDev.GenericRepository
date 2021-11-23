@@ -56,13 +56,13 @@ public class EmployeeRepositoryWithEvents : EntityRepositoryBase<Employee> {
 
 // In Startup.cs (or elsewhere)
 
-   services.AddScoped<RepositoryEvents<Employee>>(provider => {
-              var logger = provider.GetRequiredService<ILogger<RepositoryEvents<Employee>>>();
-              return new RepositoryEvents<Employee> {
-                  OnBeforeSaving = async employee => logger.LogInformation("Before saving employee {Id}", employee.Id),
-                 OnSaved = async employee => logger.LogInformation("Saved employee {Id}", employee.Id),
-                  OnSavingFailed = async (employee, exception) => logger.LogError("Saving employee {Id} failed with message {Message}", employee.Id, exception.Message)
-              };
-            })
-           .AddScoped<EmployeeRepositoryWithEvents>()
+services.AddScoped<RepositoryEvents<Employee>>(provider => {
+    var logger = provider.GetRequiredService<ILogger<RepositoryEvents<Employee>>>();
+        return new RepositoryEvents<Employee> {
+            OnBeforeSaving = async employee => logger.LogInformation("Before saving employee {Id}", employee.Id),
+            OnSaved = async employee => logger.LogInformation("Saved employee {Id}", employee.Id),
+            OnSavingFailed = async (employee, exception) => logger.LogError("Saving employee {Id} failed with message {Message}", employee.Id, exception.Message)
+        };
+    })
+    .AddScoped<EmployeeRepositoryWithEvents>()
 ````
