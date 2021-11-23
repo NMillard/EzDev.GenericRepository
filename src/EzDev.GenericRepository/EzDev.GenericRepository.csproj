@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ProjectName>EzDev.GenericRepository</ProjectName>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <Authors>Nicklas Millard</Authors>
+        
+        <Summary>Simplifying generic repository logic.</Summary>
+        <Description>Simple, generic repository that only provides the bare minimum of what you'd expect.</Description>
+        
+        <PackageId>$(ProjectName)</PackageId>
+        <PackageTags>repository;generic;generic repository;data access;datalayer</PackageTags>
+        <Title>$(ProjectName)</Title>
+        <Version>1.0.0-preview</Version>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Copyright>Copyright Nicklas Millard</Copyright>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <DebugType>embedded</DebugType>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+      <PackageReference Include="MinVer" Version="2.5.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove=".gitignore" />
+    </ItemGroup>
+
+</Project>
