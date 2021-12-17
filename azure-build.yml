@@ -8,20 +8,7 @@ variables:
   buildConfiguration: 'Release'
   
 steps:
-  - task: DotNetCoreCLI@2
-    displayName: 'Install EF Core tools'
-    inputs:
-      command: custom
-      custom: tool
-      arguments: 'install dotnet-ef -g'
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Install user-secrets'
-    inputs:
-      command: custom
-      custom: tool
-      arguments: 'install dotnet-user-secrets -g'
-
+  - 
   - task: DotNetCoreCLI@2
     displayName: 'Install report generator tool'
     inputs:
@@ -48,6 +35,14 @@ steps:
       projects: 'test/**/*.csproj'
       arguments: '-c $(buildConfiguration) --no-build --settings ".runsettings"'
       
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'pack'
+      packagesToPack: 'src/**/*.csproj'
+      includesymbols: true
+      includesource: true
+      versioningScheme: 'off'
+      
   - task: PublishCodeCoverageResults@1
     displayName: 'Publish code coverage results'
     inputs:
@@ -58,5 +53,5 @@ steps:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish artifact to drop'
     inputs:
-      artifactName: 'solution'
-      PathtoPublish: $(Build.ArtifactStagingDirectory)/app
+      artifactName: 'nuget'
+      PathtoPublish: $(Build.ArtifactStagingDirectory)
