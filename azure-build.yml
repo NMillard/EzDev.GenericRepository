@@ -14,11 +14,6 @@ steps:
       command: custom
       custom: tool
       arguments: 'install dotnet-reportgenerator-globaltool -g'
-
-  - task: DotNetCoreCLI@2
-    displayName: 'Restore packages'
-    inputs:
-      command: restore
       
   - task: DotNetCoreCLI@2
     displayName: 'Build solution'
