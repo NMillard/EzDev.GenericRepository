@@ -36,6 +36,7 @@ steps:
       projects: 'test/**/*.csproj'
       arguments: '-c $(buildConfiguration) --no-build --settings ".runsettings"'
   - task: DotNetCoreCLI@2
+    displayName: "Pack project"
     inputs:
       command: 'pack'
       packagesToPack: 'src/EzDev.GenericRepository/*.csproj'
