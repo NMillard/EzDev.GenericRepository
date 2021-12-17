@@ -11,8 +11,8 @@ steps:
   - task: UseDotNet@2
     displayName: "Use .NET Core SDK"
     inputs:
-      - packageType: sdk
-      - version: '6.0.x'
+      packageType: sdk
+      version: '6.0.x'
   - task: DotNetCoreCLI@2
     displayName: 'Install report generator tool'
     inputs:
