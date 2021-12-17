@@ -24,7 +24,7 @@ steps:
     displayName: 'Build solution'
     inputs:
       command: build
-      projects: 'src/**/*.csproj'
+      projects: '**/*.csproj'
       arguments: '-c $(buildConfiguration) --no-restore'
 
   - task: DotNetCoreCLI@2
