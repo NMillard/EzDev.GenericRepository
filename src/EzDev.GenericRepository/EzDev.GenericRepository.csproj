@@ -15,6 +15,8 @@
         <Title>$(ProjectName)</Title>
         <Version>1.0.0-preview</Version>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/NMillard/EzDev.GenericRepository</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/NMillard/EzDev.GenericRepository</PackageProjectUrl>
         
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <Copyright>Copyright Nicklas Millard</Copyright>
