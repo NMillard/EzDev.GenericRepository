@@ -8,7 +8,6 @@ variables:
   buildConfiguration: 'Release'
   
 steps:
-  - 
   - task: DotNetCoreCLI@2
     displayName: 'Install report generator tool'
     inputs:
