@@ -14,6 +14,8 @@
         <PackageTags>repository;generic;generic repository;data access;datalayer</PackageTags>
         <Title>$(ProjectName)</Title>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/NMillard/EzDev.GenericRepository</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/NMillard/EzDev.GenericRepository</PackageProjectUrl>
         
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <Copyright>Copyright Nicklas Millard</Copyright>
