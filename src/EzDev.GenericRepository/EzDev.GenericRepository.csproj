@@ -13,7 +13,6 @@
         <PackageId>$(ProjectName)</PackageId>
         <PackageTags>repository;generic;generic repository;data access;datalayer</PackageTags>
         <Title>$(ProjectName)</Title>
-        <Version>1.0.0-preview</Version>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/NMillard/EzDev.GenericRepository</RepositoryUrl>
         <PackageProjectUrl>https://github.com/NMillard/EzDev.GenericRepository</PackageProjectUrl>
@@ -33,11 +32,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0"/>
-        <PackageReference Include="MinVer" Version="2.5.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+      <PackageReference Include="MinVer" Version="2.5.0" privateAssets="All" />
     </ItemGroup>
 
     <ItemGroup>
