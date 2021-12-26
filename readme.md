@@ -1,4 +1,5 @@
 [![Build Status](https://nmillard.visualstudio.com/EzDev/_apis/build/status/NMillard.EzDev.GenericRepository?branchName=master)](https://nmillard.visualstudio.com/EzDev/_build/latest?definitionId=4&branchName=master)
+[![Medium Badge](https://badgen.net/badge/icon/medium?icon=medium&label)](https://medium.com/@nmillard)
 # Easy Generic Repository
 
 EzDev.GenericRepository is a very simplistic, lightweight generic repository based on EntityFramework Core, that doesn't lock you into a certain way of working. You're provided a single base class with simple CRUD-based operations, that you may override if you have other requirements.
