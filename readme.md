@@ -4,6 +4,15 @@
 
 EzDev.GenericRepository is a very simplistic, lightweight generic repository based on EntityFramework Core, that doesn't lock you into a certain way of working. You're provided a single base class with simple CRUD-based operations, that you may override if you have other requirements.
 
+## Installation
+
+Install with [NuGet](https://www.nuget.org/packages/EzDev.GenericRepository)  
+
+or use .NET Core CLI  
+`dotnet add package EzDev.GenericRepository`.
+
+Consider using `--prelease` for preview versions.
+
 ## How do I get started?
 Create a class that inherits from `EntityRepositoryBase` and implement its constructor.  
 In its simplest form, you can have a repository such as below.
