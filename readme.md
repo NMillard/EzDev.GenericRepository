@@ -1,14 +1,17 @@
 [![Build Status](https://nmillard.visualstudio.com/EzDev/_apis/build/status/NMillard.EzDev.GenericRepository?branchName=master)](https://nmillard.visualstudio.com/EzDev/_build/latest?definitionId=4&branchName=master)
-
-
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/nmillard/ezdev/4)
+[![NuGet latest version](https://badgen.net/nuget/v/EzDev.GenericRepository/latest)](https://nuget.org/packages/newtonsoft.json)
 [![Medium Badge](https://badgen.net/badge/icon/medium?icon=medium&label)](https://medium.com/@nmillard)
+
 # Easy Generic Repository
 
-EzDev.GenericRepository is a very simplistic, lightweight generic repository based on EntityFramework Core, that doesn't lock you into a certain way of working. You're provided a single base class with simple CRUD-based operations, that you may override if you have other requirements.
+EzDev.GenericRepository is a very simplistic, lightweight generic repository based on EntityFramework Core, that doesn't
+lock you into a certain way of working. You're provided a single base class with simple CRUD-based operations, that you
+may override if you have other requirements.
 
 ## Installation
 
-Install with [NuGet](https://www.nuget.org/packages/EzDev.GenericRepository)  
+Install with [NuGet](https://www.nuget.org/packages/EzDev.GenericRepository)
 
 or use .NET Core CLI  
 `dotnet add package EzDev.GenericRepository`.
@@ -16,6 +19,7 @@ or use .NET Core CLI
 Consider using `--prelease` for preview versions.
 
 ## How do I get started?
+
 Create a class that inherits from `EntityRepository<T>` and implement its constructor.  
 In its simplest form, you can have a repository such as below.
 
@@ -27,10 +31,13 @@ public class SimpleEmployeeRepository : EntityRepository<Employee> {
 
 That's honestly it.
 
-The `SimpleEmployeeRepository` now has default implementations for getting, adding, updating, and deleting `Employee` entities.
+The `SimpleEmployeeRepository` now has default implementations for getting, adding, updating, and deleting `Employee`
+entities.
 
 ### More advanced options
-Say you have a `Company` type acting as an aggregate root with a list of employees, and you want to retrieve all employees whenever you query a company.
+
+Say you have a `Company` type acting as an aggregate root with a list of employees, and you want to retrieve all
+employees whenever you query a company.
 
 In this case, you may want to override the default `Entities` property on the `EntityRepository`, as demonstrated below.
 
@@ -43,9 +50,12 @@ public class CompanyRepository : EntityRepository<Company> {
 ````
 
 ### Extension and listening points
-Take advantage of events to plug in your own code without having to override methods. This is great for implementing cross-cutting concerns such as logging.
 
-You can listen to repository events in two ways: implement the methods directly in the repository, or, register them with the dependency injection framework.
+Take advantage of events to plug in your own code without having to override methods. This is great for implementing
+cross-cutting concerns such as logging.
+
+You can listen to repository events in two ways: implement the methods directly in the repository, or, register them
+with the dependency injection framework.
 
 ````c#
 public class EmployeeRepositoryWithEvents : EntityRepository<Employee> {
@@ -59,7 +69,8 @@ public class EmployeeRepositoryWithEvents : EntityRepository<Employee> {
 }
 ````
 
-If you don't want to pollute your repository with logging statements, then you can register the `RepositoryEvents<T>` with your dependency container framework, such as below.
+If you don't want to pollute your repository with logging statements, then you can register the `RepositoryEvents<T>`
+with your dependency container framework, such as below.
 
 ````c#
 public class EmployeeRepositoryWithEvents : EntityRepository<Employee> {
