@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzDev.GenericRepository", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzDev.Examples.GenericRepository.SimpleImplementations", "samples\EzDev.Examples.GenericRepository.SimpleImplementations\EzDev.Examples.GenericRepository.SimpleImplementations.csproj", "{BA860158-44AE-4071-AEC9-3DD4CB29DF1C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BDA1E039-67F7-49DA-9DF6-63B5773BBA01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzDev.GenericRepositoryTests", "tests\EzDev.GenericRepositoryTests\EzDev.GenericRepositoryTests.csproj", "{BED53C44-CE7F-4711-A6F8-02C2462F401C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,8 +30,13 @@ Global
 		{BA860158-44AE-4071-AEC9-3DD4CB29DF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA860158-44AE-4071-AEC9-3DD4CB29DF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA860158-44AE-4071-AEC9-3DD4CB29DF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED53C44-CE7F-4711-A6F8-02C2462F401C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED53C44-CE7F-4711-A6F8-02C2462F401C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED53C44-CE7F-4711-A6F8-02C2462F401C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED53C44-CE7F-4711-A6F8-02C2462F401C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BA860158-44AE-4071-AEC9-3DD4CB29DF1C} = {5ED69FD0-AB5E-4A62-BEBA-FC959E831847}
+		{BED53C44-CE7F-4711-A6F8-02C2462F401C} = {BDA1E039-67F7-49DA-9DF6-63B5773BBA01}
 	EndGlobalSection
 EndGlobal

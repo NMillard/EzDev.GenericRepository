@@ -7,7 +7,7 @@ namespace EzDev.GenericRepository;
 /// A generic repository used with aggregates, based on EntityFramework Core <see cref="DbContext"/>. 
 /// </summary>
 /// <typeparam name="TEntity">The aggregate type this repository operates on.</typeparam>
-public abstract class EntityRepositoryBase<TEntity> where TEntity : class {
+public abstract class EntityRepository<TEntity> where TEntity : class {
     protected readonly DbContext Context;
     
     protected RepositoryEvents<TEntity> Events { get; init; } = new();
@@ -18,12 +18,18 @@ public abstract class EntityRepositoryBase<TEntity> where TEntity : class {
     /// </summary>
     protected IQueryable<TEntity> Entities { get; init; }
     
-    protected EntityRepositoryBase(DbContext context) {
+    /// <summary>
+    /// This constructor defaults to having the <see cref="Entities"/> property query the provided <see cref="DbContext"/>'s set of <see cref="TEntity"/>
+    /// with the AsNoTracking enabled.
+    /// Override the <see cref="Entities"/> if the entity require special includes or filters.
+    /// </summary>
+    /// <param name="context">The context this repository performs queries against.</param>
+    protected EntityRepository(DbContext context) {
         Context = context;
         Entities = context.Set<TEntity>().AsNoTracking().AsQueryable();
     }
 
-    protected EntityRepositoryBase(DbContext context, RepositoryEvents<TEntity> events) : this(context)
+    protected EntityRepository(DbContext context, RepositoryEvents<TEntity> events) : this(context)
         => Events = events;
 
     public virtual async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default) 
