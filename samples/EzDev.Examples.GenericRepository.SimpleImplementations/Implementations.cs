@@ -5,11 +5,11 @@ using Microsoft.Extensions.Logging;
 
 namespace EzDev.Examples.GenericRepository.SimpleImplementations;
 
-public class SimpleEmployeeRepository : EntityRepositoryBase<Employee> {
+public class SimpleEmployeeRepository : EntityRepository<Employee> {
     public SimpleEmployeeRepository(DbContext context) : base(context) { }
 }
 
-public class EmployeeRepositoryWithEvents : EntityRepositoryBase<Employee> {
+public class EmployeeRepositoryWithEvents : EntityRepository<Employee> {
     public EmployeeRepositoryWithEvents(DbContext context, ILogger logger) : base(context) {
         Events = new RepositoryEvents<Employee> {
             OnBeforeSaving = async employee => logger.LogInformation("Before saving employee {Id}", employee.Id),
@@ -22,7 +22,7 @@ public class EmployeeRepositoryWithEvents : EntityRepositoryBase<Employee> {
         base(context, events) { }
 }
 
-public class CompanyRepository : EntityRepositoryBase<Company> {
+public class CompanyRepository : EntityRepository<Company> {
     public CompanyRepository(DbContext context) : base(context) { }
 
     public CompanyRepository(DbContext context, RepositoryEvents<Company> events) : base(context, events) {

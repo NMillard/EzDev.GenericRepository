@@ -37,7 +37,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove=".gitignore"/>
+        <None Remove=".gitignore" />
         <None Include="../../readme.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
