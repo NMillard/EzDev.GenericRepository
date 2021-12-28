@@ -1,4 +1,6 @@
 [![Build Status](https://nmillard.visualstudio.com/EzDev/_apis/build/status/NMillard.EzDev.GenericRepository?branchName=master)](https://nmillard.visualstudio.com/EzDev/_build/latest?definitionId=4&branchName=master)
+
+
 [![Medium Badge](https://badgen.net/badge/icon/medium?icon=medium&label)](https://medium.com/@nmillard)
 # Easy Generic Repository
 

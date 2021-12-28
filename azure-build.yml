@@ -33,8 +33,14 @@ steps:
     displayName: 'Run tests'
     inputs:
       command: test
-      projects: 'test/**/*.csproj'
+      projects: 'tests/**/*.csproj'
       arguments: '-c $(buildConfiguration) --no-build --settings ".runsettings"'
+  - task: PublishCodeCoverageResults@1
+    displayName: 'Publish code coverage results'
+    inputs:
+      codeCoverageTool: Cobertura
+      reportDirectory: $(Agent.TempDirectory)/Result
+      summaryFileLocation: $(Agent.TempDirectory)/**/*cobertura.xml
   - task: DotNetCoreCLI@2
     displayName: "Pack project"
     inputs:
